@@ -26,6 +26,14 @@ nav.navbar {
     line-height: 64px !important;
 }
 
+.sidenav .collapsible .collapsible-header .chevron {
+    float: right;
+    margin: 0;
+}
+
+.sidenav .collapsible>.active .collapsible-header .chevron {
+    transform: rotate(-90deg);
+}
 @media only screen and (max-width : 992px) {
     header, main, footer {
         padding-left: 0;

@@ -12,10 +12,8 @@
     <!--Import materialize.css-->
     <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
     <link rel="stylesheet" href="css/materializeStyle.css">
-    <script
-  src="https://code.jquery.com/jquery-3.4.1.min.js"
-  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-  crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 </head>
 <body>
     <header>
@@ -23,7 +21,7 @@
             <nav class="navbar white">
                 <a href="#!" class="brand-logo">Logo</a>
                 <a href="#" data-target="slide-out" class="sidenav-trigger">
-                    <i class="material-icons">menu</i>
+                    <i class="material-icons" style="color: black;">menu</i>
                 </a>
             </nav>
         </div>
@@ -32,9 +30,26 @@
             <li>
                 <a href="sass.html" class="logo-container">Sass</a>
             </li>
-            <li><a href="badges.html">Components</a></li>
-            <li><a href="collapsible.html">Javascript</a></li>
-            <li><a href="mobile.html">Mobile</a></li>
+            <li>
+                <ul class="collapsible">
+                    <li>
+                        <a class="collapsible-header">Page<i class="material-icons chevron">chevron_left</i></a>
+                        <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+                    </li>
+                    <li>
+                        <a class="collapsible-header">Chart<i class="material-icons chevron">chevron_left</i></a>
+                        <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+                    </li>
+                    <li>
+                        <a class="collapsible-header">Header</a>
+                        <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+                    </li>
+                    <li>
+                        <a class="collapsible-header">Account</a>
+                        <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+                    </li>
+                </ul>
+            </li>
         </ul>
     </header>
 
@@ -42,6 +57,7 @@
     <script>
         $(document).ready(function(){
             $('.sidenav').sidenav();
+            $('.collapsible').collapsible();
         });
     </script>
 </body>
