@@ -25,32 +25,30 @@
                 </a>
             </nav>
         </div>
-
-        <ul id="slide-out" class="sidenav left-side-nav">
-            <li>
-                <a href="sass.html" class="logo-container">Sass</a>
-            </li>
-            <li>
+        <div id="slide-out" class="sidenav left-side-nav">
+            <div class="logo-container">
+                <a href="#">Title</a>
+            </div>
+            <div class="sidenav-container">
+                <h4 class="sidenav-title">Overview</h4>
+                <ul>
+                    <li><a href="#">Admin Dashboard</a></li>
+                    <li><a href="#">Frontend Template</a></li>
+                </ul>
+                <h4 class="sidenav-title">Componments</h4>
                 <ul class="collapsible">
                     <li>
                         <a class="collapsible-header">Page<i class="material-icons chevron">chevron_left</i></a>
-                        <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-                    </li>
-                    <li>
-                        <a class="collapsible-header">Chart<i class="material-icons chevron">chevron_left</i></a>
-                        <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-                    </li>
-                    <li>
-                        <a class="collapsible-header">Header</a>
-                        <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-                    </li>
-                    <li>
-                        <a class="collapsible-header">Account</a>
-                        <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+                        <div class="collapsible-body">
+                            <ul>
+                                <li>Dashboard</li>
+                                <li>Fixed Chart</li>
+                                <li>Grid</li>
+                            </ul>
+                        </div>
                     </li>
                 </ul>
-            </li>
-        </ul>
+            </div>
     </header>
 
     <script type="text/javascript" src="js/materialize.min.js"></script>

@@ -12,18 +12,32 @@ nav.navbar {
 
 .left-side-nav {
     transform: translateX(0%);
-    background-color: #448AFF;
-}
-
-.left-side-nav>li:first-child {
-    height: 64px;
-    line-height: 64px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 .logo-container {
-    height: 64px !important;
-    line-height: 64px !important;
+    height: 64px;
+    line-height: 64px;
+    border-bottom: 1px solid;
+    padding: 0 16px;
+}
+
+.sidenav-container {
+
+}
+
+.sidenav-title {
+    font-size: 16px;
+    font-weight: 700;
+    padding-left: 20px;
+}
+
+.sidenav .collapsible .collapsible-header {
+    padding-left: 30px;
+}
+
+.sidenav .collapsible .collapsible-body {
+    padding-left: 40px;
+    font-size: 14px;
 }
 
 .sidenav .collapsible .collapsible-header .chevron {
@@ -34,6 +48,7 @@ nav.navbar {
 .sidenav .collapsible>.active .collapsible-header .chevron {
     transform: rotate(-90deg);
 }
+
 @media only screen and (max-width : 992px) {
     header, main, footer {
         padding-left: 0;
