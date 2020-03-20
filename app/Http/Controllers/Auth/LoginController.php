@@ -50,7 +50,12 @@ class LoginController extends Controller
         $loginInfo = $request->only('account', 'password');
         $loginInfo['is_activated'] = 1;
         
-        if (Auth::attempt($loginInfo)) return redirect($redirectTo);
+        if (Auth::attempt($loginInfo)) return redirect('/home');
         else return redirect('/login');
+    }
+
+    public function logout() {
+        Auth::logout();
+        return redirect('/login');
     }
 }

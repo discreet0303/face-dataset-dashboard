@@ -18,11 +18,14 @@
 <body>
     <header>
         <div class="navbar-fixed top-nav">
-            <nav class="navbar white">
+            <nav class="navbar">
                 <a href="#!" class="brand-logo">Logo</a>
                 <a href="#" data-target="slide-out" class="sidenav-trigger">
                     <i class="material-icons" style="color: black;">menu</i>
                 </a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down" style="padding-right: 300px;">
+                    <li><a href="/logout">Logout</a></li>
+                  </ul>
             </nav>
         </div>
         <div id="slide-out" class="sidenav left-side-nav">
