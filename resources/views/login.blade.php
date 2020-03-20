@@ -99,13 +99,14 @@
             <a href="#">Login</a>
         </div>
         <div class="card-content">
-            <form class="col s12">
+            <form class="col s12" method="POST" action="/login">
+                @csrf
                 <div class="input-field">
-                    <input id="account" placeholder="user@example.com" type="text" class="validate">
+                    <input id="account" name="account" placeholder="user@example.com" type="text" class="validate">
                     <label for="account">Log in with your e-mail address</label>
                 </div>
                 <div class="input-field">
-                    <input id="password" placeholder="Numbers, Letters..." type="text" class="validate">
+                    <input id="password" name="password" placeholder="Numbers, Letters..." type="password" class="validate">
                     <label for="password">Password</label>
                 </div>
                 <button class="btn waves-effect waves-light" type="submit" name="action" style="width: 100%;">Sign in to Dashboard</button>

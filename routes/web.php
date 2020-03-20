@@ -13,13 +13,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/1', function () {
-    return view('login');
-});
-Route::get('/2', function () {
-    return view('boot');
-});
+Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
+Route::get('/login', function(){
+    return view('login');
+});
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/get', function() {
+    return Hash::make('root');
+});
+
+Route::post('/test', function() {
+    return 123;
+});
