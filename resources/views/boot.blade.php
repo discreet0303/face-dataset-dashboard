@@ -1,33 +1,64 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
+        <!-- Material Design for Bootstrap fonts and icons -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
 
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
-</head>
-<body>
-    <header>
-        <nav class="navbar fixed-top">
-            <a class="navbar-brand" href="#">Home</a>
-        </nav>
-        <div class="container">
-        </div>
-        {{-- <div class="container">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <!-- Material Design for Bootstrap CSS -->
+        <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+        <link rel="stylesheet" href="css/style.css">
+
+        <title>Hello, world!</title>
+    </head>
+    <body>
+        <header>
+            <nav class="navbar fixed-top top-nav">
+                <button type="button" class="navbar-toggler" data-toggle="modal" data-target="#exampleModalCenterTest">
+                    <span class="material-icons">menu</span>
+                </button>
+                <a class="navbar-brand" href="#">Fixed top</a>
             </nav>
-        </div> --}}
+            <!-- Modal -->
+            <div class="modal" id="exampleModalCenterTest" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-sm" role="document" style="position: absolute;height: 100%;margin: 0;">
+                    <div class="modal-content" style="height: inherit;">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">Create New User</h5>
+                        </div>
+                        <div class="modal-body">
+                            ...
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="sidenav" class="side-nav">
+                123
+            </div>
+        </header>
+        <main>
+            <div class="card main-content">
+                <div class="card-page">
+                    <span class="material-icons" style="margin-top: 2px;">chevron_right</span>
+                    <h4 style="margin: 0;margin-left: 5px;">Card Title</h4>
+                </div>
+                
+                <div class="card-body">
+                    @include('longText')
+                </div>
+            </div>
+        </main>
 
-    </header>
-    
-</body>
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9" crossorigin="anonymous"></script>
+    </body>
 </html>
