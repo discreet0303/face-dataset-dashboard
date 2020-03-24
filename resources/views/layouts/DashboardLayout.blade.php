@@ -11,47 +11,36 @@
         <!-- Material Design for Bootstrap CSS -->
         <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
 
-        <title>Hello, world!</title>
+        <title>Dashboard</title>
         
-        <link rel="stylesheet" href="css/dashboard.css">
+        <link rel="stylesheet" href="{{ asset('css/dashboard.css') }}">
+    
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     </head>
     <body>
         <header>
-            <nav class="navbar fixed-top top-nav">
-                <button type="button" class="navbar-toggler" data-toggle="modal" data-target="#slide-out-menu">
-                    <span class="material-icons">menu</span>
-                </button>
-                <a class="navbar-brand" href="#">Fixed top</a>
-                <ul class="navbar-nav">
-                    <li>
-                        <a class="btn navbar-bt" href="/logout">Logout</a>
-                    </li>
-                </ul>
-            </nav>
-            
-            <div id="sidenav" class="side-nav">
-                123
-            </div>
+            @include('nav.TopNavigation')
+            @include('nav.SideNavigation')
         </header>
 
         <main>
-            <div class="card main-content" style="height: 100%;">
+            <div class="card main-content">
                 <div class="card-page">
                     <span class="material-icons" style="margin-top: 2px;">chevron_right</span>
                     <h4 style="margin: 0;margin-left: 5px;">Card Title</h4>
                 </div>
                 
-                @include('pages.UserManagementPage')
+                @yield('dashboardContent')
             </div>
         </main>
 
-        @include('components.SlideOutMenu')
-
+        @include('nav.SlideOutNavigation')
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
         <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" crossorigin="anonymous"></script>
         <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9" crossorigin="anonymous"></script>
+
         <script>$(document).ready(function() { $('body').bootstrapMaterialDesign(); });</script>
     </body>
 </html>

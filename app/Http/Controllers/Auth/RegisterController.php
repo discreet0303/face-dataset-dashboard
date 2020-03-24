@@ -96,6 +96,11 @@ class RegisterController extends Controller
         $userInfo['is_activated'] = 1;
         User::create($userInfo);
 
-        return redirect($this->dashboardUrl);
+        $msg = [
+            'status' => 'success',
+            'icon' => 'success',
+            'title' => 'Create User Success!!',
+        ];
+        return redirect($this->dashboardUrl)->with($msg);
     }
 }

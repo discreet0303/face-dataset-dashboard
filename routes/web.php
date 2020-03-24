@@ -25,7 +25,6 @@ Route::get('/logout', 'Auth\LoginController@logout');
 Route::post('/register', 'Auth\RegisterController@register');
 
 Route::group(['middleware' => 'auth', 'prefix' => 'dashboard', 'name' => 'dashboard.'], function() {
-    Route::get('/', function() {
-        return view('containers.dashboard.Index');
-    });
+
+    Route::get('/usermanagement', 'UserController@userManagementPage');
 });
