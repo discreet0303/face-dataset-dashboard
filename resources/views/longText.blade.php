@@ -1,5 +1,5 @@
 <div>
-    <button type="button" class="btn bt-float" data-toggle="modal" data-target="#exampleModalCenter">
+    <button type="button" class="btn bt-float" data-toggle="modal" data-target="#exampleModalCenter"  data-backdrop="static" data-keyboard="false">
         <span class="material-icons">add</span>
     </button>  
 </div>
