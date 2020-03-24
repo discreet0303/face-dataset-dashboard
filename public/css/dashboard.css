@@ -2,6 +2,10 @@
     font-family: '微軟正黑體';
 }
 
+html, body, main {
+    height: 100%;
+}
+
 .no-padding {
     padding: 0 !important;
 }
@@ -17,6 +21,9 @@
 .top-nav {
     background-color: #607d8b;
     justify-content: space-between;
+    height: 56px;
+    padding-top: 0;
+    padding-bottom: 0;
 }
 
 .top-nav .navbar-toggler {
@@ -35,6 +42,17 @@
 .top-nav .material-icons {
     color: white;
     margin-right: 10px;
+}
+
+.navbar-nav > li > a {
+    height: 56px;
+    vertical-align: middle;
+    line-height: 3;
+    color: white;
+    font-weight: bold;
+}
+.navbar-nav > li > a:hover {
+    color: white;
 }
 
 .side-nav {

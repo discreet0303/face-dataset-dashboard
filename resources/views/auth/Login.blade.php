@@ -1,127 +1,109 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    
-    <!--Import Google Icon Font-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!--Import materialize.css-->
-    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <style>
-        html, body {
-            height: 100%;
-            padding: 0;
-            margin: 0;
-        }
+        <!-- Material Design for Bootstrap fonts and icons -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
 
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+        <!-- Material Design for Bootstrap CSS -->
+        <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
 
-        .bg-img {
-            background-image: url('img/background.jpeg');
-            background-size: 100%;
-            height: 100%;
-            width: 100%;
-            -webkit-filter: blur(2px);
-            -moz-filter: blur(2px);
-            -o-filter: blur(2px);
-            -ms-filter: blur(2px);
-            filter: blur(2px);
-            position: absolute;
-        }
+        <title>Hello, world!</title>
+        <style>
+            html, body {
+                height: 100%;
+                width: 100%;
+            }
+            
+            .bg-img {
+                height: inherit;
+                width: inherit;
+                background-image: url('img/background.jpeg');
+                background-size: 100%;
+                background-repeat: round;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
 
-        .login-form{
-            background-color: white;
-            position: absolute;
-            width: 450px;
-        }
+            .card {
+                width: 450px;
+            }
 
-        .login-form .icon-title {
-            height: 70px;
-            width: 70px;
-            background-color: red;
-            margin: 0 auto;
-            border-radius: 100%;
-            display: flex;
-            position: absolute;
-            top: -35px;
-            right: 0;
-            left: 0;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        .card-title {
-            border-bottom: 1px solid #e6eaee;
-            background-color: #fafbfc;
-            padding: 1.5625rem 1.875rem;
-        }
+            .icon-logo {
+                height: 70px;
+                width: 70px;
+                background-color: red;
+                margin: 0 auto;
+                border-radius: 100%;
+                display: flex;
+                position: absolute;
+                top: -35px;
+                right: 0;
+                left: 0;
+                justify-content: center;
+                align-items: center;
+            }
+            
+            .card-title {
+                border-bottom: 1px solid #e6eaee;
+                background-color: #fafbfc;
+                padding: 1.5625rem 1.875rem;
+            }
+            
+            .text-divider {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
 
-        .card-content {
-            /* background-color: #fff; */
-        }
-
-        .card-footer {
-            /* background-color: #fff; */
-        }
-
-        .input-field {
-            margin-bottom: 30px;
-        }
-
-        .text-divider {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .text-divider::before, 
-        .text-divider::after {
-            content: "";
-            width: 25%;
-            height: 1px;
-            background-color: #dfe3e9;
-        }
-    </style>
-</head>
-<body>
-    <div class="bg-img"></div>
-    <div class="login-form card">
-        <div class="icon-title">圖書</div>
-        <div class="card-title">
-            <a href="#">Login</a>
-        </div>
-        <div class="card-content">
-            <form class="col s12" method="POST" action="/login">
-                @csrf
-                <div class="input-field">
-                    <input id="account" name="account" placeholder="user@example.com" type="text" class="validate">
-                    <label for="account">Log in with your e-mail address</label>
+            .text-divider::before, 
+            .text-divider::after {
+                content: "";
+                width: 25%;
+                height: 1px;
+                background-color: #dfe3e9;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="bg-img">
+            <div class="card">
+                <div class="icon-logo">圖書</div>
+                <h5 class="card-title">Login</h5>
+                <div class="card-body">
+                    <form class="col s12" method="POST" action="/login">
+                        @csrf
+                        <div class="form-group">
+                            <label for="account">Log in with your e-mail address</label>
+                            <input type="text" class="form-control" id="account"  name="account"  aria-describedby="emailHelp" placeholder="user@example.com">
+                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control" id="password" name="password" placeholder="Numbers, Letters...">
+                        </div>
+                        <button type="submit" class="btn btn-raised btn-block btn-primary">Sign in to Dashboard</button>
+                    </form>
+                    <div class="text-divider">
+                        Login via social network
+                    </div>
+                    <div class="card-content">
+                        <p style="text-align: center;">圖書館資訊</p>
+                    </div>
+                    <div style="float: right;">Forget Password?</div>
                 </div>
-                <div class="input-field">
-                    <input id="password" name="password" placeholder="Numbers, Letters..." type="password" class="validate">
-                    <label for="password">Password</label>
-                </div>
-                <button class="btn waves-effect waves-light" type="submit" name="action" style="width: 100%;">Sign in to Dashboard</button>
-            </form>
+            </div>
         </div>
-        <div class="card-footer text-divider">
-            Login via social network
-        </div>
-        <div class="card-content">
-            <p style="text-align: center;">圖書館資訊</p>
-        </div>
-        <div style="float: right;">Forget Password?</div>
-    </div>
-    
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="js/materialize.min.js"></script>
-</body>
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9" crossorigin="anonymous"></script>
+        <script>$(document).ready(function() { $('body').bootstrapMaterialDesign(); });</script>
+    </body>
 </html>
