@@ -29,7 +29,8 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    protected $loginUrl = RouteServiceProvider::LOGIN;
+    protected $dashboardUrl = RouteServiceProvider::DASHBOARD;
 
     /**
      * Create a new controller instance.
@@ -50,12 +51,12 @@ class LoginController extends Controller
         $loginInfo = $request->only('account', 'password');
         $loginInfo['is_activated'] = 1;
         
-        if (Auth::attempt($loginInfo)) return redirect('/home');
-        else return redirect('/login');
+        if (Auth::attempt($loginInfo)) return redirect($this->dashboardUrl);
+        else return redirect($this->loginUrl);
     }
 
     public function logout() {
         Auth::logout();
-        return redirect('/login');
+        return redirect($this->loginUrl);
     }
 }

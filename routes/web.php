@@ -13,19 +13,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Auth::routes();
-Route::get('/logout', 'Auth\LoginController@logout');
-Route::get('/', function() {
-    return redirect('/login');
-});
 
-Route::get('/login', function(){
+Route::redirect('/', '/login');
+Route::get('/login', function() {
     return view('auth.Login');
-});
+})->name('login');
+Route::post('/login', 'Auth\LoginController@login');
 
-Route::get('/home', function() {
-    return view('index');
-});
+Route::get('/logout', 'Auth\LoginController@logout');
 
-Route::get('/test', function() {
-    return view('containers.dashboard.Index');
+Route::group(['middleware' => 'auth', 'prefix' => 'dashboard', 'name' => 'dashboard.'], function() {
+    Route::get('/', function() {
+        return view('containers.dashboard.Index');
+    });
 });

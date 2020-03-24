@@ -22,6 +22,11 @@
                     <span class="material-icons">menu</span>
                 </button>
                 <a class="navbar-brand" href="#">Fixed top</a>
+                <ul class="navbar-nav">
+                    <li>
+                        <a class="nav-link" href="/logout">Logout</a>
+                    </li>
+                </ul>
             </nav>
             
             <div id="sidenav" class="side-nav">

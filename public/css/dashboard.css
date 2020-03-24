@@ -16,7 +16,7 @@
 
 .top-nav {
     background-color: #607d8b;
-    justify-content: start;
+    justify-content: space-between;
 }
 
 .top-nav .navbar-toggler {
