@@ -13,9 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/1', function () {
-    return view('index');
+Auth::routes();
+Route::get('/logout', 'Auth\LoginController@logout');
+Route::get('/login', function(){
+    return view('auth.Login');
 });
-Route::get('/2', function () {
-    return view('boot');
+
+Route::get('/home', function() {
+    return view('index');
 });

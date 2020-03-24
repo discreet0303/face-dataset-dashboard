@@ -20,24 +20,11 @@
     <body>
         <header>
             <nav class="navbar fixed-top top-nav">
-                <button type="button" class="navbar-toggler" data-toggle="modal" data-target="#exampleModalCenterTest">
+                <button type="button" class="navbar-toggler" data-toggle="modal" data-target="#slide-out-menu">
                     <span class="material-icons">menu</span>
                 </button>
                 <a class="navbar-brand" href="#">Fixed top</a>
             </nav>
-            <!-- Modal -->
-            <div class="modal" id="exampleModalCenterTest" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered modal-sm" role="document" style="position: absolute;height: 100%;margin: 0;">
-                    <div class="modal-content" style="height: inherit;">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLongTitle">Create New User</h5>
-                        </div>
-                        <div class="modal-body">
-                            ...
-                        </div>
-                    </div>
-                </div>
-            </div>
             <div id="sidenav" class="side-nav">
                 123
             </div>
@@ -55,6 +42,7 @@
             </div>
         </main>
 
+        @include('components.SlideOutMenu')
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
