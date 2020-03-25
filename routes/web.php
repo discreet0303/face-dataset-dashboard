@@ -24,7 +24,15 @@ Route::get('/logout', 'Auth\LoginController@logout');
 
 Route::post('/register', 'Auth\RegisterController@register');
 
-Route::group(['middleware' => 'auth', 'prefix' => 'dashboard', 'name' => 'dashboard.'], function() {
+Route::group(['middleware' => 'auth'], function() {
 
-    Route::get('/usermanagement', 'UserController@userManagementPage');
+    Route::group(['prefix' => 'dashboard', 'as' => 'dashboard.'], function() {
+        
+        Route::get('/', function() {
+            return redirect()->action('UserController@userManagementPage');
+        });
+        // User Management
+        Route::get('/usermanagement', 'UserController@userManagementPage')->name('usermanagement');
+        Route::delete('/user/delete/{userId}', 'UserController@deleteUser')->name('deleteUser');
+    });
 });

@@ -73,23 +73,32 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($users as $user)
+                @forelse ($users as $user)
                     <tr>
-                        <td>{{ $loop->index + 1 }}</td>
+                        <td>{{ $user->id }}</td>
                         <td>{{ $user->username }}</td>
                         <td>{{ $user->account }}</td>
                         <td>{{ $user->email }}</td>
-                        <td>{{ $user->primary_role }}</td>
+                        <td>{{ $user->role_translation }}</td>
                         <td class="text-center">
                             <button type="button" class="btn btn-dark no-margin no-pading">
                                 <span class="material-icons" style="color: #607d8b;">create</span>
                             </button>
-                            <button type="button" class="btn btn-secondary no-margin no-pading">
-                                <span class="material-icons" style="color:#f50057;">delete</span>
-                            </button>
+
+                            <form action="{{ route('dashboard.deleteUser', ['userId' => $user->id]) }}" method="post" style="display: inline;">
+                                @method('delete')
+                                @csrf
+                                <button type="submit" class="btn btn-secondary no-margin no-pading">
+                                    <span class="material-icons" style="color:#f50057;">delete</span>
+                                </button>
+                            </form>
                         </td>
                     </tr>
-                @endforeach
+                @empty
+                    <tr>
+                        <td colspan="6" class="table-empty-text">尚無使用者資料</td>
+                    </tr>
+                @endforelse
             </tbody>
         </table>
     </div>

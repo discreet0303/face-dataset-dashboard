@@ -13,10 +13,22 @@ class UserController extends Controller
     }
 
     public function userManagementPage() {
-        $users = User::all();
+        $users = User::where('id', '>', 1)->get();
 
         return view('pages.UserManagementPage', [
             'users' => $users
         ]);
+    }
+
+    public function deleteUser($userId) {
+        User::destroy($userId);
+
+        $msg = [
+            'status' => 'success',
+            'icon' => 'success',
+            'title' => 'Delete User Success!!',
+        ];
+        
+        return redirect()->route('dashboard.usermanagement')->with($msg);
     }
 }

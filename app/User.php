@@ -10,11 +10,6 @@ class User extends Authenticatable
 {
     use Notifiable;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
     protected $fillable = [
         'account',
         'password',
@@ -24,21 +19,25 @@ class User extends Authenticatable
         'is_activated'
     ];
 
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
     protected $hidden = [
-        'password', 'remember_token',
+        'password',
+        'remember_token',
     ];
 
-    /**
-     * The attributes that should be cast to native types.
-     *
-     * @var array
-     */
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    
+    protected $appends = [
+        'role_translation',
+    ];
+    
+    public function getRoleTranslationAttribute() {
+        $roleEnToCh = [
+            'super-admin' => '最高管理者',
+            'admin' => '管理者',
+            'user' => '使用者'
+        ];
+        return $roleEnToCh[$this->primary_role];
+    }
 }

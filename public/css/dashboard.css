@@ -98,6 +98,14 @@ main {
     padding-bottom: 3px;
 }
 
+.table-empty-text {
+    text-align: center;
+    padding: 15px !important;
+    font-size: 16px;
+    color: #757575;
+    font-weight: bold;
+}
+
 .bt-float {
     position: fixed;
     right: 20px;
