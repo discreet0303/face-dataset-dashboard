@@ -15,9 +15,8 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 Route::redirect('/', '/login');
-Route::get('/login', function() {
-    return view('auth.Login');
-})->name('login');
+
+Route::get('/login', 'Auth\LoginController@loginPage');
 Route::post('/login', 'Auth\LoginController@login');
 
 Route::get('/logout', 'Auth\LoginController@logout');
@@ -36,3 +35,5 @@ Route::group(['middleware' => 'auth'], function() {
         Route::delete('/user/delete/{userId}', 'UserController@deleteUser')->name('deleteUser');
     });
 });
+
+Route::get('/dashboard/photo/upload', 'PhotoController@photoUpload');

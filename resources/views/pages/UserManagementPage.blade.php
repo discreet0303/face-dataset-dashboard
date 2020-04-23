@@ -1,5 +1,5 @@
 @extends('layouts.DashboardLayout')
-{{-- @section('title', 'Page Title') --}}
+@section('content-title', '帳號管理')
 
 @section('dashboardContent')
     <div>

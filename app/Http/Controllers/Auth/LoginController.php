@@ -47,6 +47,10 @@ class LoginController extends Controller
         return 'account';
     }
 
+    public function loginPage() {
+        return view('auth.Login');
+    }
+
     public function login(Request $request) {
         $loginInfo = $request->only('account', 'password');
         $loginInfo['is_activated'] = 1;
